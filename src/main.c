@@ -38,6 +38,13 @@ int main(int argc, char* argv[]) {
 	if ((fp = fopen(argv[argc-1], "rb")) == NULL) {
 		fprintf(stderr, "Something went wrong...\n");
 		perror("OOPS");
+		return (0);
+	}
+	//Read
+	char c[10];
+	while(!feof(fp)) {
+		fread(c, 9, sizeof(char), fp);
+		printf("%s", c);
 	}
 	return (0);
 }
